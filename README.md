@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Garden Gems International Website
+
+A modern website for Garden Gems International, showcasing the Drop N Grow container solution and other premium plant container products.
+
+## Prerequisites
+
+- Node.js 18.17 or later
+- npm (Node Package Manager)
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd web
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Start the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site will be available at [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Static Export
 
-To learn more about Next.js, take a look at the following resources:
+To build the site as a static export:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Build the site:
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. The static files will be generated in the `out` directory. You can serve these files using any static file server.
 
-## Deploy on Vercel
+Example using a local HTTP server:
+```bash
+npm install -g http-server
+cd out
+http-server
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Built With
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js 14](https://nextjs.org/) - React framework
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [shadcn/ui](https://ui.shadcn.com/) - UI component library
+
+## Project Structure
+
+```
+web/
+├── app/              # Next.js app directory
+│   ├── about/       # About page
+│   ├── contact/     # Contact page
+│   ├── drop-n-grow/ # Drop N Grow product page
+│   └── components/  # Shared components
+├── public/          # Static assets
+└── styles/         # Global styles
+```
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production (generates static files in `out` directory)
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+
+## Environment Variables
+
+No environment variables are required for local development.
