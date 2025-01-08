@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { LanguageSwitcherButton } from '../language-switcher-button';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +49,6 @@ export function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <LanguageSwitcherButton />
             </div>
 
             {/* Mobile Menu Button */}
@@ -132,9 +130,6 @@ export function Navigation() {
                     {link.label}
                   </Link>
                 ))}
-                <div className="px-4 py-3">
-                  <LanguageSwitcherButton />
-                </div>
               </nav>
             </div>
           </div>
