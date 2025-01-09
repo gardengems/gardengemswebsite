@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "./navigation";
+import { getBasePath } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,17 +36,17 @@ export default function RootLayout({
                 <h3 className="text-lg font-semibold">Quick Links</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="/drop-n-grow" className="hover:text-primary transition-colors">
+                    <a href={getBasePath("/drop-n-grow")} className="hover:text-primary transition-colors">
                       Drop N Grow
                     </a>
                   </li>
                   <li>
-                    <a href="/about" className="hover:text-primary transition-colors">
+                    <a href={getBasePath("/about")} className="hover:text-primary transition-colors">
                       About Us
                     </a>
                   </li>
                   <li>
-                    <a href="/contact" className="hover:text-primary transition-colors">
+                    <a href={getBasePath("/contact")} className="hover:text-primary transition-colors">
                       Contact
                     </a>
                   </li>
