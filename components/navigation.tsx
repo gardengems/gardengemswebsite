@@ -2,9 +2,22 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    console.log('Current pathname:', pathname);
+  }, [pathname]);
+
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === href;
+    }
+    return pathname?.includes(href);
+  };
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -24,52 +37,44 @@ export function Navigation() {
           <nav className="flex h-16 items-center justify-between">
             <Link 
               href="/" 
-              className="text-lg font-semibold hover:text-primary transition-colors"
+              className={`text-lg font-semibold transition-colors ${isActive('/') ? 'text-primary cursor-default' : 'hover:text-primary'}`}
+              {...(isActive('/') ? { onClick: (e) => e.preventDefault() } : {})}
             >
               Garden Gems International
             </Link>
             <div className="flex items-center gap-8">
               <nav className="hidden md:flex items-center space-x-1">
-                <Link
-                  href="/"
-                  className="px-4 py-2 rounded-md hover:bg-muted transition-colors relative group"
-                >
-                  Home
-                  <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-primary/0 via-primary/70 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
-                <Link
-                  href="/drop-n-grow"
-                  className="px-4 py-2 rounded-md hover:bg-muted transition-colors relative group"
-                >
-                  Drop N Grow
-                  <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-primary/0 via-primary/70 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
-                <Link
-                  href="/about"
-                  className="px-4 py-2 rounded-md hover:bg-muted transition-colors relative group"
-                >
-                  About Us
-                  <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-primary/0 via-primary/70 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="px-4 py-2 rounded-md hover:bg-muted transition-colors relative group"
-                >
-                  Contact
-                  <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-primary/0 via-primary/70 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
-                <Link
-                  href="/search"
-                  className="px-4 py-2 rounded-md hover:bg-muted transition-colors relative group"
-                >
-                  Knowledge Base
-                  <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-primary/0 via-primary/70 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
+                {[
+                  { href: '/', label: 'Home' },
+                  { href: '/drop-n-grow', label: 'Drop N Grow' },
+                  { href: '/about', label: 'About' },
+                  { href: '/contact', label: 'Contact' },
+                  { href: '/search', label: 'Knowledge Base' },
+                ].map(({ href, label }) => (
+                  isActive(href) ? (
+                    <span
+                      key={href}
+                      className="px-4 py-2 rounded-md bg-primary/10 text-primary font-medium cursor-default border border-primary/20"
+                    >
+                      {label}
+                    </span>
+                  ) : (
+                    <Link
+                      key={href}
+                      href={href}
+                      className="px-4 py-2 rounded-md hover:bg-muted transition-colors relative group"
+                    >
+                      {label}
+                      <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-primary/0 via-primary/70 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </Link>
+                  )
+                ))}
               </nav>
               <Link
                 href="/settings"
-                className="p-2 rounded-md hover:bg-muted transition-colors"
+                className={`p-2 rounded-md transition-colors ${isActive('/settings') ? 'bg-primary/10 text-primary cursor-default' : 'hover:bg-muted'}`}
                 aria-label="Settings"
+                {...(isActive('/settings') ? { onClick: (e) => e.preventDefault() } : {})}
               >
                 <svg
                   className="w-6 h-6"
@@ -150,48 +155,32 @@ export function Navigation() {
                 </button>
               </div>
               <nav className="flex-1 px-6 py-8 space-y-2 overflow-y-auto">
-                <Link
-                  href="/"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-lg font-medium hover:bg-muted transition-colors rounded-md"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/drop-n-grow"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-lg font-medium hover:bg-muted transition-colors rounded-md"
-                >
-                  Drop N Grow
-                </Link>
-                <Link
-                  href="/about"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-lg font-medium hover:bg-muted transition-colors rounded-md"
-                >
-                  About Us
-                </Link>
-                <Link
-                  href="/contact"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-lg font-medium hover:bg-muted transition-colors rounded-md"
-                >
-                  Contact
-                </Link>
-                <Link
-                  href="/search"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-lg font-medium hover:bg-muted transition-colors rounded-md"
-                >
-                  Knowledge Base
-                </Link>
-                <Link
-                  href="/settings"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-lg font-medium hover:bg-muted transition-colors rounded-md"
-                >
-                  Settings
-                </Link>
+                {[
+                  { href: '/', label: 'Home' },
+                  { href: '/drop-n-grow', label: 'Drop N Grow' },
+                  { href: '/about', label: 'About Us' },
+                  { href: '/contact', label: 'Contact' },
+                  { href: '/search', label: 'Knowledge Base' },
+                  { href: '/settings', label: 'Settings' },
+                ].map(({ href, label }) => (
+                  isActive(href) ? (
+                    <span
+                      key={href}
+                      className="block px-4 py-3 text-lg font-medium bg-primary/10 text-primary cursor-default rounded-md border border-primary/20"
+                    >
+                      {label}
+                    </span>
+                  ) : (
+                    <Link
+                      key={href}
+                      href={href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block px-4 py-3 text-lg font-medium hover:bg-muted transition-colors rounded-md"
+                    >
+                      {label}
+                    </Link>
+                  )
+                ))}
               </nav>
             </div>
           </div>

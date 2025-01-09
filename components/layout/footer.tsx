@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { getContent } from '@/lib/content';
-import type { HomeContent } from '@/lib/content-types';
+import { getContent } from '@/lib/content/index';
+import type { HomeContent } from '@/lib/content/types';
 import { useLanguage } from '@/lib/contexts/language-context';
 
 export function Footer() {
@@ -15,8 +15,7 @@ export function Footer() {
   const { language } = useLanguage();
 
   useEffect(() => {
-    getContent<HomeContent>('home', language).then((content) => {
-      // @ts-expect-error socialLinks exists in the content but TypeScript is not recognizing it
+    getContent('home', language).then((content: HomeContent) => {
       setSocialLinks(content.socialLinks);
     });
   }, [language]);

@@ -14,12 +14,6 @@ export default function Navigation() {
     { href: '/about', label: 'About Us' },
     { href: '/drop-n-grow', label: 'Drop N Grow' },
     { href: '/contact', label: 'Contact' },
-    // Temporarily hidden - Knowledge Base functionality
-    // { 
-    //   href: '/search', 
-    //   label: 'Knowledge Base',
-    //   className: 'ml-6 text-primary hover:text-primary/80 font-medium' 
-    // }
   ];
 
   const isActive = (href: string) => pathname === href;
@@ -29,7 +23,11 @@ export default function Navigation() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="relative w-48 h-14 flex-shrink-0">
+            <Link 
+              href="/" 
+              className="relative w-48 h-14 flex-shrink-0"
+              {...(isActive('/') ? { onClick: (e) => e.preventDefault() } : {})}
+            >
               <Image
                 src="/images/logo.png"
                 alt="Garden Gems International"
@@ -41,19 +39,24 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-4">
               {links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`${
-                    isActive(link.href)
-                      ? 'text-foreground'
-                      : 'text-muted-foreground hover:text-foreground'
-                  } transition-colors ${link.className || ''}`}
-                >
-                  {link.label}
-                </Link>
+                isActive(link.href) ? (
+                  <span
+                    key={link.href}
+                    className="px-4 py-2 rounded-md bg-primary/10 text-primary font-medium cursor-default"
+                  >
+                    {link.label}
+                  </span>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="px-4 py-2 rounded-md bg-accent/5 hover:bg-accent/10 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
             </div>
 
@@ -119,22 +122,23 @@ export default function Navigation() {
               </div>
               <nav className="flex-1 px-6 py-8 space-y-2 overflow-y-auto">
                 {links.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`block px-4 py-3 text-lg font-medium rounded-md transition-colors ${
-                      isActive(link.href)
-                        ? 'text-foreground bg-accent'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
-                    } ${
-                      link.href === '/search'
-                        ? 'mt-4 text-primary hover:text-primary/80 border-t border-border pt-6'
-                        : ''
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
+                  isActive(link.href) ? (
+                    <span
+                      key={link.href}
+                      className="block px-4 py-3 text-lg font-medium text-primary bg-primary/10 cursor-default rounded-md"
+                    >
+                      {link.label}
+                    </span>
+                  ) : (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground bg-accent/5 hover:bg-accent/10 rounded-md transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )
                 ))}
               </nav>
             </div>
