@@ -65,12 +65,16 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold">
-                {homeContent.solution.title}
-                <span className="block text-2xl text-muted-foreground mt-2">
-                  {homeContent.solution.subtitle}
-                </span>
-              </h2>
+              <div className="flex flex-col items-center mb-8">
+                <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40 mb-8" />
+                <h2 className="text-4xl font-bold text-center mb-8">
+                  {homeContent.solution.title}
+                  <span className="block text-2xl text-muted-foreground mt-2">
+                    {homeContent.solution.subtitle}
+                  </span>
+                </h2>
+                <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
+              </div>
               <p className="text-lg text-muted-foreground">
                 {homeContent.solution.description}
               </p>
@@ -109,9 +113,13 @@ export default function Home() {
 
       <section className="py-24 bg-background">
         <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-16">
-            {homeContent.benefits.title}
-          </h2>
+          <div className="flex flex-col items-center mb-8">
+            <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40 mb-8" />
+            <h2 className="text-3xl font-bold text-center mb-8">
+              {homeContent.benefits.title}
+            </h2>
+            <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {homeContent.benefits.items.map((item) => (
               <div key={item.title} className="text-center space-y-4">
@@ -129,15 +137,16 @@ export default function Home() {
       </section>
 
       {/* Image Section */}
-      <section className="py-12 bg-background">
+      <section className="py-8 bg-background">
         <div className="container">
-          <div className="relative aspect-video max-w-4xl mx-auto rounded-lg overflow-hidden">
+          <div className="relative aspect-[16/9] max-w-5xl mx-auto rounded-lg overflow-hidden">
             <Image 
               src={getBasePath(homeContent.showcase.image.src)}
               alt={homeContent.showcase.image.alt}
               fill 
-              className="object-cover"
+              className="object-contain"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+              quality={90}
             />
           </div>
         </div>
@@ -145,9 +154,13 @@ export default function Home() {
 
       <section className="py-24 bg-background">
         <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-6">
-            {homeContent.partners.title}
-          </h2>
+          <div className="flex flex-col items-center mb-8">
+            <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40 mb-8" />
+            <h2 className="text-3xl font-bold text-center mb-8">
+              {homeContent.partners.title}
+            </h2>
+            <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
+          </div>
           <p className="text-xl text-muted-foreground text-center max-w-2xl mx-auto mb-16">
             {homeContent.partners.subtitle}
           </p>

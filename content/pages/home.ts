@@ -52,14 +52,14 @@ export const homeContent = {
 
   showcase: {
     image: {
-      src: "/images/expo/expo-container-replica.jpg",
-      alt: "Drop N Grow Container Display"
+      src: "/images/container/cut-open-container.png",
+      alt: "Drop N Grow Container Interior"
     }
   },
 
   partners: {
     title: "Our Partners & Certifications",
-    subtitle: "We collaborate with industry leaders to ensure the highest quality standards in our products",
+    subtitle: "We partner with industry trailblazers to deliver unmatched quality and set new standards.",
     list: [
       {
         name: "Lumatek",
@@ -81,7 +81,7 @@ export const homeContent = {
       }
     ],
     footer: {
-      text: "Our partnerships and certifications ensure that you receive the highest quality products and support",
+      text: "Through strategic partnerships with industry leaders like Lumatek, Growlink, Control Union, we combine innovation, automation, and world-class certifications to deliver the ultimate cultivation solution.",
       ctaButton: {
         text: "Learn more about our quality standards",
         href: "/about"
