@@ -1,4 +1,8 @@
 export const footerContent = {
+  logo: {
+    src: "/images/circle-logo.png",
+    alt: "Garden Gems International Logo"
+  },
   about: {
     title: "About Us",
     description: "Garden Gems provides scalable and sustainable cannabis solutions, ensuring compliance, automation, and success in the global market."
