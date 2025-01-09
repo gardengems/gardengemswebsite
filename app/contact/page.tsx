@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -113,13 +114,29 @@ export default function ContactPage() {
 
   return (
     <div className="container py-24">
-      <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
+      <div className="text-center mb-16">
+        <h1 className="text-4xl font-bold">Contact Us</h1>
+      </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div className="space-y-8">
           <p className="text-xl text-muted-foreground">
             Have questions about our products or need assistance? We&apos;re here to help. Get in touch with our team using the form below or through our contact information.
           </p>
+
+          {/* Contact Image */}
+          <div className="max-w-xl">
+            <div className="aspect-video relative rounded-lg overflow-hidden">
+              <Image 
+                src="/images/expo/expo-container-replica.jpg"
+                alt="Garden Gems Container Display"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
+          </div>
 
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Contact Information</h2>
