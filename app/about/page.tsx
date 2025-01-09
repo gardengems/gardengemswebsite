@@ -1,6 +1,6 @@
 import { ExpoSlideshow } from '@/components/ExpoSlideshow';
 import Image from 'next/image';
-import { getAssetPath } from '@/lib/utils';
+import { getBasePath } from '@/lib/utils';
 
 export default function AboutPage() {
   return (
@@ -17,7 +17,7 @@ export default function AboutPage() {
       <div className="max-w-4xl mx-auto mb-16">
         <div className="aspect-video relative rounded-lg overflow-hidden">
           <Image 
-            src={getAssetPath("/images/container/container-interior.jpg")}
+            src={getBasePath("/images/container/container-interior.jpg")}
             alt="Garden Gems Container Interior"
             fill
             className="object-cover"
@@ -128,13 +128,13 @@ export default function AboutPage() {
           </p>
           <div className="flex gap-4 justify-center">
             <a
-              href="/drop-n-grow"
+              href={getBasePath("/drop-n-grow")}
               className="inline-block bg-white text-primary hover:bg-white/90 px-6 py-2 rounded-md transition-colors"
             >
               Explore Drop N Grow
             </a>
             <a
-              href="/contact"
+              href={getBasePath("/contact")}
               className="inline-block bg-primary/20 hover:bg-primary/30 text-white px-6 py-2 rounded-md transition-colors"
             >
               Contact Us

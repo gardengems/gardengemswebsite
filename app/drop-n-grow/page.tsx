@@ -1,4 +1,4 @@
-import { getAssetPath } from '@/lib/utils';
+import { getBasePath } from '@/lib/utils';
 
 export default function DropNGrowPage() {
   const features = [
@@ -106,7 +106,7 @@ export default function DropNGrowPage() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src={getAssetPath('/videos/container-hero.mp4')} type="video/mp4" />
+            <source src={getBasePath('/videos/container-hero.mp4')} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -217,7 +217,7 @@ export default function DropNGrowPage() {
               Contact us to learn more about the Drop N Grow system and how it can revolutionize your cultivation process.
             </p>
             <a
-              href="/contact"
+              href={getBasePath("/contact")}
               className="inline-block bg-white text-primary hover:bg-white/90 px-8 py-3 rounded-md transition-colors"
             >
               Contact Us

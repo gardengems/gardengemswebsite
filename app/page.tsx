@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { getAssetPath } from '@/lib/utils';
+import { getBasePath } from '@/lib/utils';
 
 export default function Home() {
   const [showScroll, setShowScroll] = useState(true);
@@ -24,19 +24,19 @@ export default function Home() {
     {
       name: "Lumatek",
       description: "Advanced LED lighting solutions",
-      logo: getAssetPath("/partners/lumatek.png"),
+      logo: getBasePath("/partners/lumatek.png"),
       url: "https://lumatek-lighting.com/"
     },
     {
       name: "Growlink",
       description: "Smart growing automation",
-      logo: getAssetPath("/partners/growlink.png"),
+      logo: getBasePath("/partners/growlink.png"),
       url: "https://www.growlink.ag/"
     },
     {
       name: "Control Union",
       description: "International certification",
-      logo: getAssetPath("/partners/controlunion.png"),
+      logo: getBasePath("/partners/controlunion.png"),
       url: "https://www.controlunion.com/"
     }
   ];
@@ -45,7 +45,7 @@ export default function Home() {
     <>
       <section className="relative h-[100vh] flex flex-col justify-center">
         <Image
-          src={getAssetPath("/images/hero/hero-bg.png")}
+          src={getBasePath("/images/hero/hero-bg.png")}
           alt="Drop N Grow Container"
           fill
           className="object-cover"
@@ -67,7 +67,7 @@ export default function Home() {
             Revolutionary all-in-one container solution for professional growing operations
           </p>
           <a
-            href="/drop-n-grow"
+            href={getBasePath("/drop-n-grow")}
             className="inline-block bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-md transition-colors"
           >
             Discover Drop N Grow
@@ -133,7 +133,7 @@ export default function Home() {
               </ul>
               <div className="pt-4">
                 <a
-                  href="/drop-n-grow"
+                  href={getBasePath("/drop-n-grow")}
                   className="inline-flex items-center gap-2 text-primary hover:text-primary/90 font-medium"
                 >
                   Learn more about Drop N Grow
@@ -155,7 +155,7 @@ export default function Home() {
             </div>
             <div className="relative aspect-square bg-muted/20 rounded-lg overflow-hidden">
               <Image 
-                src={getAssetPath("/images/container/container-interior.jpg")}
+                src={getBasePath("/images/container/container-interior.jpg")}
                 alt="Drop N Grow Container Interior"
                 fill
                 className="object-cover"
@@ -244,7 +244,7 @@ export default function Home() {
         <div className="container">
           <div className="relative aspect-video max-w-4xl mx-auto rounded-lg overflow-hidden">
             <Image 
-              src={getAssetPath("/images/expo/expo-container-replica.jpg")}
+              src={getBasePath("/images/expo/expo-container-replica.jpg")}
               alt="Drop N Grow Container Display"
               fill 
               className="object-cover"
@@ -292,7 +292,7 @@ export default function Home() {
               Our partnerships and certifications ensure that you receive the highest quality products and support
             </p>
             <a
-              href="/about"
+              href={getBasePath("/about")}
               className="inline-flex items-center gap-2 text-primary hover:text-primary/90 font-medium"
             >
               Learn more about our quality standards

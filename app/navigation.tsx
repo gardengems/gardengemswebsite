@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { getBasePath } from '@/lib/utils';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +30,7 @@ export default function Navigation() {
               {...(isActive('/') ? { onClick: (e) => e.preventDefault() } : {})}
             >
               <Image
-                src="/images/logo.png"
+                src={getBasePath("/images/logo.png")}
                 alt="Garden Gems International"
                 fill
                 className="object-contain"

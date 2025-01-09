@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function getAssetPath(path: string): string {
+export function getBasePath(path: string): string {
   const basePath = process.env.NODE_ENV === 'production' ? '/gardengemswebsite' : '';
   return `${basePath}${path}`;
 }
