@@ -7,23 +7,20 @@ import { Icon } from '@/components/icons';
 export default function AboutPage() {
   return (
     <div className="container py-24">
-      {/* Hero Section */}
-      <div className="text-center mb-16">
-        {/* Top Divider */}
-        <div className="h-1 w-full bg-gradient-to-r from-primary/40 via-primary to-primary/40 mb-8" />
-        
-        <h1 className="text-4xl font-bold mb-6">
-          {aboutContent.hero.title}
-          <span className="block text-2xl text-muted-foreground mt-2">
-            {aboutContent.hero.subtitle}
-          </span>
-        </h1>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-          {aboutContent.hero.description}
-        </p>
-
-        {/* Bottom Divider */}
-        <div className="h-1 w-full bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <div className="h-1 w-full bg-gradient-to-r from-primary/40 via-primary to-primary/40 mb-8" />
+          <h1 className="text-4xl font-bold mb-6">
+            {aboutContent.hero.title}
+            <span className="block text-2xl text-muted-foreground mt-2">
+              {aboutContent.hero.subtitle}
+            </span>
+          </h1>
+          <div className="h-1 w-full bg-gradient-to-r from-primary/40 via-primary to-primary/40 mb-8" />
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            {aboutContent.hero.description}
+          </p>
+        </div>
       </div>
 
       {/* Hero Image */}
@@ -42,7 +39,11 @@ export default function AboutPage() {
 
       {/* Mission */}
       <div className="max-w-3xl mx-auto mb-24">
-        <h2 className="text-2xl font-semibold mb-4 text-center">{aboutContent.mission.title}</h2>
+        <div className="flex flex-col items-center mb-8">
+          <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40 mb-8" />
+          <h2 className="text-2xl font-semibold text-center mb-8">{aboutContent.mission.title}</h2>
+          <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
+        </div>
         <p className="text-muted-foreground">
           {aboutContent.mission.description}
         </p>
@@ -50,7 +51,11 @@ export default function AboutPage() {
 
       {/* Company Values */}
       <div className="max-w-3xl mx-auto mb-24">
-        <h2 className="text-2xl font-semibold mb-8 text-center">{aboutContent.values.title}</h2>
+        <div className="flex flex-col items-center mb-8">
+          <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40 mb-8" />
+          <h2 className="text-2xl font-semibold text-center mb-8">{aboutContent.values.title}</h2>
+          <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
+        </div>
         <div className="space-y-8">
           {aboutContent.values.items.map((value) => (
             <div key={value.title} className="flex items-start gap-4">
@@ -70,7 +75,11 @@ export default function AboutPage() {
 
       {/* Expo Photos */}
       <div className="max-w-3xl mx-auto mb-24">
-        <h2 className="text-2xl font-semibold mb-8 text-center">{aboutContent.team.title}</h2>
+        <div className="flex flex-col items-center mb-8">
+          <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40 mb-8" />
+          <h2 className="text-2xl font-semibold text-center mb-8">{aboutContent.team.title}</h2>
+          <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
+        </div>
         <ExpoSlideshow />
       </div>
 
