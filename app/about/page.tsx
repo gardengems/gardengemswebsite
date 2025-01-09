@@ -1,4 +1,5 @@
 import { ExpoSlideshow } from '@/components/ExpoSlideshow';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
@@ -9,6 +10,20 @@ export default function AboutPage() {
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           We are pioneering the future of container growing technology with our innovative Drop N Grow solution.
         </p>
+      </div>
+
+      {/* Hero Image */}
+      <div className="max-w-4xl mx-auto mb-16">
+        <div className="aspect-video relative rounded-lg overflow-hidden">
+          <Image 
+            src="/images/container/container-interior.jpg"
+            alt="Garden Gems Container Interior"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+            priority
+          />
+        </div>
       </div>
 
       {/* Mission */}
