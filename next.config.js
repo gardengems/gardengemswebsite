@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: "/gardengemswebsite",
+  output: 'export',
   images: {
     unoptimized: true,
-  },
-  output: 'export'
+  }
 }
 
 module.exports = nextConfig 
