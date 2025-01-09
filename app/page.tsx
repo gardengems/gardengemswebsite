@@ -137,17 +137,21 @@ export default function Home() {
       </section>
 
       {/* Image Section */}
-      <section className="py-8 bg-background">
+      <section className="py-12 bg-background">
         <div className="container">
-          <div className="relative aspect-[16/9] max-w-5xl mx-auto rounded-lg overflow-hidden">
-            <Image 
-              src={getBasePath(homeContent.showcase.image.src)}
-              alt={homeContent.showcase.image.alt}
-              fill 
-              className="object-contain"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-              quality={90}
-            />
+          <div className="relative max-w-4xl mx-auto rounded-lg overflow-hidden">
+            <div className="aspect-[16/9] relative">
+              <div className="absolute -top-[10%] -bottom-[10%] left-0 right-0">
+                <Image 
+                  src={getBasePath(homeContent.showcase.image.src)}
+                  alt={homeContent.showcase.image.alt}
+                  fill 
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                  quality={90}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
