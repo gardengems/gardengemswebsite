@@ -3,6 +3,10 @@ export const dropNGrowContent = {
     title: "Drop N Grow",
     subtitle: "All-In-One Container Solution",
     description: "The Drop N Grow system delivers a game-changing all-in-one container solution, seamlessly designed to optimize your growing operations.  Each container is equipped with everything you need to elevate your cultivation potential, offering unmatched efficiency and a traditional grow medium to drive exceptional results.",
+    placeholder: {
+      src: "/images/video-placeholder.jpg",
+      alt: "Drop N Grow System Video Preview"
+    },
     video: {
       src: "/videos/container-hero.mp4",
       type: "video/mp4"
