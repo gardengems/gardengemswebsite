@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { getBasePath } from '@/lib/utils';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -128,7 +129,7 @@ export default function ContactPage() {
           <div className="max-w-xl">
             <div className="aspect-video relative rounded-lg overflow-hidden">
               <Image 
-                src="/images/expo/expo-container-replica.jpg"
+                src={getBasePath("/images/expo/expo-container-replica.jpg")}
                 alt="Garden Gems Container Display"
                 fill
                 className="object-cover"
