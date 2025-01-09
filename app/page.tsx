@@ -238,6 +238,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Image Section */}
+      <section className="py-12 bg-background">
+        <div className="container">
+          <div className="relative aspect-video max-w-4xl mx-auto rounded-lg overflow-hidden">
+            <Image 
+              src="/images/expo/expo-container-replica.jpg"
+              alt="Drop N Grow Container Display"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-background">
         <div className="container">
           <h2 className="text-3xl font-bold text-center mb-6">
