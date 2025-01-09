@@ -3,8 +3,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: 'export',
-  basePath: "/gardengemswebsite",
+  output: 'export'
 }
 
 module.exports = nextConfig 
