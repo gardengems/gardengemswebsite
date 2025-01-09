@@ -2,31 +2,24 @@
 
 import { useState, useEffect, TouchEvent } from 'react';
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
 
 const images = [
   {
-    src: '/images/expo/expo-consult.jpg',
-    alt: 'Consultation at Expo',
-    width: 1536,
-    height: 2048
+    src: getAssetPath("/images/expo/expo-staff.jpg"),
+    alt: "Garden Gems Staff at Expo"
   },
   {
-    src: '/images/expo/expo-container-replica.jpg',
-    alt: 'Container Replica Display',
-    width: 1152,
-    height: 2048
+    src: getAssetPath("/images/expo/expo-employee.jpg"),
+    alt: "Garden Gems Employee Presentation"
   },
   {
-    src: '/images/expo/expo-employee.jpg',
-    alt: 'Employee at Expo',
-    width: 1536,
-    height: 2048
+    src: getAssetPath("/images/expo/expo-container-replica.jpg"),
+    alt: "Container Replica Display"
   },
   {
-    src: '/images/expo/expo-staff.jpg',
-    alt: 'Staff Group Photo',
-    width: 1536,
-    height: 2048
+    src: getAssetPath("/images/expo/expo-consult.jpg"),
+    alt: "Consultation at Expo"
   }
 ];
 
