@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { getBasePath } from '@/lib/utils';
+import { contactContent } from '@/content/pages/contact';
+import { Icon } from '@/components/icons';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -31,18 +33,18 @@ export default function ContactPage() {
     setFormStatus({ type: null, message: '' });
 
     try {
-      const formId = '1FAIpQLSdNXbM-lX7aL2N69HzfdKQOttnvM8i1_Wv_0AOPIf58ZR3WWQ';
-      const formUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
+      const formUrl = `https://docs.google.com/forms/d/e/${contactContent.form.googleForm.id}/formResponse`;
       
       // Create form data object
       const googleFormData = new FormData();
-      googleFormData.append('entry.1239206215', formData.firstName);
-      googleFormData.append('entry.1658023229', formData.lastName);
-      googleFormData.append('emailAddress', formData.email);
-      googleFormData.append('entry.1346407412', formData.email);
-      googleFormData.append('entry.579681654', formData.company);
-      googleFormData.append('entry.46365967', formData.subject);
-      googleFormData.append('entry.1765825334', formData.message);
+      googleFormData.append(contactContent.form.googleForm.fields.firstName, formData.firstName);
+      googleFormData.append(contactContent.form.googleForm.fields.lastName, formData.lastName);
+      contactContent.form.googleForm.fields.email.forEach(field => {
+        googleFormData.append(field, formData.email);
+      });
+      googleFormData.append(contactContent.form.googleForm.fields.company, formData.company);
+      googleFormData.append(contactContent.form.googleForm.fields.subject, formData.subject);
+      googleFormData.append(contactContent.form.googleForm.fields.message, formData.message);
 
       // Create a hidden iframe for submission
       const iframe = document.createElement('iframe');
@@ -55,7 +57,7 @@ export default function ContactPage() {
       iframe.onload = () => {
         setFormStatus({
           type: 'success',
-          message: 'Thank you for your message. We will get back to you soon!'
+          message: contactContent.form.messages.success
         });
 
         setFormData({
@@ -99,7 +101,7 @@ export default function ContactPage() {
     } catch {
       setFormStatus({
         type: 'error',
-        message: 'There was an error submitting your message. Please try again later.'
+        message: contactContent.form.messages.error
       });
       setIsSubmitting(false);
     }
@@ -116,21 +118,25 @@ export default function ContactPage() {
   return (
     <div className="container py-24">
       <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold">Contact Us</h1>
+        <h1 className="text-4xl font-bold mb-6">
+          {contactContent.hero.title}
+          <span className="block text-2xl text-muted-foreground mt-2">
+            {contactContent.hero.subtitle}
+          </span>
+        </h1>
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div className="space-y-8">
-          <p className="text-xl text-muted-foreground">
-            Have questions about our products or need assistance? We&apos;re here to help. Get in touch with our team using the form below or through our contact information.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            {contactContent.hero.description}
           </p>
-
           {/* Contact Image */}
           <div className="max-w-xl">
             <div className="aspect-video relative rounded-lg overflow-hidden">
               <Image 
-                src={getBasePath("/images/expo/expo-container-replica.jpg")}
-                alt="Garden Gems Container Display"
+                src={getBasePath(contactContent.image.src)}
+                alt={contactContent.image.alt}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -140,63 +146,25 @@ export default function ContactPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">Contact Information</h2>
+            <h2 className="text-2xl font-semibold">{contactContent.contactInfo.title}</h2>
             <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-primary"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
+              {contactContent.contactInfo.items.map((item) => (
+                <div key={item.title} className="flex items-center gap-4">
+                  <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Icon name={item.icon} className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">{item.title}</h3>
+                    {item.url ? (
+                      <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-muted-foreground">{item.value}</p>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold">Email</h3>
-                  <p className="text-muted-foreground">info@gardengemsinternational.com</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-primary"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold">Instagram</h3>
-                  <a href="https://instagram.com/gardengemsinternational" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                    @gardengemsinternational
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-primary"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold">LinkedIn</h3>
-                  <a href="https://linkedin.com/company/garden-gems-international" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                    Garden Gems International
-                  </a>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -211,91 +179,51 @@ export default function ContactPage() {
               )}
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="firstName" className="text-sm font-medium">
-                    First Name
+                {contactContent.form.fields.slice(0, 2).map((field) => (
+                  <div key={field.name} className="space-y-2">
+                    <label htmlFor={field.name} className="text-sm font-medium">
+                      {field.label}
+                    </label>
+                    <input
+                      id={field.name}
+                      name={field.name}
+                      value={formData[field.name as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 border border-border rounded-md"
+                      type={field.type}
+                      required={field.required}
+                    />
+                  </div>
+                ))}
+              </div>
+              {contactContent.form.fields.slice(2).map((field) => (
+                <div key={field.name} className="space-y-2">
+                  <label htmlFor={field.name} className="text-sm font-medium">
+                    {field.label}
                   </label>
-                  <input
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-border rounded-md"
-                    type="text"
-                    required
-                  />
+                  {field.type === 'textarea' ? (
+                    <textarea
+                      id={field.name}
+                      name={field.name}
+                      value={formData[field.name as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 border border-border rounded-md"
+                      rows={field.rows}
+                      required={field.required}
+                    />
+                  ) : (
+                    <input
+                      id={field.name}
+                      name={field.name}
+                      value={formData[field.name as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 border border-border rounded-md"
+                      type={field.type}
+                      required={field.required}
+                    />
+                  )}
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="lastName" className="text-sm font-medium">
-                    Last Name
-                  </label>
-                  <input
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-border rounded-md"
-                    type="text"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-border rounded-md"
-                  type="email"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="company" className="text-sm font-medium">
-                  Company
-                </label>
-                <input
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-border rounded-md"
-                  type="text"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium">
-                  Subject
-                </label>
-                <input
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-border rounded-md"
-                  type="text"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-border rounded-md"
-                  rows={6}
-                  required
-                />
-              </div>
+              ))}
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -303,7 +231,7 @@ export default function ContactPage() {
                   isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? contactContent.form.submitButton.loadingText : contactContent.form.submitButton.text}
               </button>
             </form>
           ) : (

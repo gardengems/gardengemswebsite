@@ -5,17 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { getBasePath } from '@/lib/utils';
+import { navigationContent } from '@/content/pages/navigation';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-
-  const links: { href: string; label: string; className?: string }[] = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Us' },
-    { href: '/drop-n-grow', label: 'Drop N Grow' },
-    { href: '/contact', label: 'Contact' },
-  ];
 
   const isActive = (href: string) => pathname === href;
 
@@ -30,8 +24,8 @@ export default function Navigation() {
               {...(isActive('/') ? { onClick: (e) => e.preventDefault() } : {})}
             >
               <Image
-                src={getBasePath("/images/logo.png")}
-                alt="Garden Gems International"
+                src={getBasePath(navigationContent.logo.src)}
+                alt={navigationContent.logo.alt}
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 192px, 192px"
@@ -41,7 +35,7 @@ export default function Navigation() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-4">
-              {links.map((link) => (
+              {navigationContent.links.map((link) => (
                 isActive(link.href) ? (
                   <span
                     key={link.href}
@@ -65,7 +59,7 @@ export default function Navigation() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-2 rounded-md hover:bg-accent"
-              aria-label="Toggle menu"
+              aria-label={navigationContent.mobileMenu.ariaLabels.toggleMenu}
             >
               <svg
                 className="h-6 w-6"
@@ -100,11 +94,11 @@ export default function Navigation() {
           <div className="fixed inset-y-0 right-0 w-full max-w-xs bg-background shadow-xl z-50 md:hidden">
             <div className="flex flex-col h-full">
               <div className="flex items-center justify-between h-16 px-6 border-b border-border">
-                <span className="text-lg font-semibold">Menu</span>
+                <span className="text-lg font-semibold">{navigationContent.mobileMenu.title}</span>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="p-2 rounded-md hover:bg-accent"
-                  aria-label="Close menu"
+                  aria-label={navigationContent.mobileMenu.ariaLabels.closeMenu}
                 >
                   <svg
                     className="w-6 h-6"
@@ -122,7 +116,7 @@ export default function Navigation() {
                 </button>
               </div>
               <nav className="flex-1 px-6 py-8 space-y-2 overflow-y-auto">
-                {links.map((link) => (
+                {navigationContent.links.map((link) => (
                   isActive(link.href) ? (
                     <span
                       key={link.href}
