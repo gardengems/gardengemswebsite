@@ -2,17 +2,17 @@ export const aboutContent = {
   hero: {
     title: "About Garden Gems",
     subtitle: "Pioneering Container Growing Technology",
-    description: "We are pioneering the future of container growing technology with our innovative Drop N Grow solution."
+    description: "We're redefining container growing with the revolutionary innovation of our Drop N Grow solution."
   },
 
   heroImage: {
-    src: "/images/container/container-interior.jpg",
+    src: "/images/container/container-in-warehouse.jpg",
     alt: "Garden Gems Container Interior"
   },
 
   mission: {
     title: "Our Mission",
-    description: "To revolutionize the growing industry through innovative container solutions that combine smart technology with sustainable practices, enabling our customers to achieve optimal results while maintaining environmental responsibility."
+    description: "At Garden Gems, we're redefining the future of cannabis cultivation with cutting-edge, sustainable container solutions.  Our innovative Drop N Grow modular systems integrate smart technology with scalable designs, making it easier for businesses to cultivate premium, medical-grade cannabis while minimizing both costs and environmental impact.  We empower our customers to streamline operations, achieve peak efficiency, and maintain compliance with the highest international standards-all while driving sustainable growth.  With Garden Gems, you're not just investing in a product; you're gaining a partner committed to your long-term success in a fast-evolving global market."
   },
 
   values: {

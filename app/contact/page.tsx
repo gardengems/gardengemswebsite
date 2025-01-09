@@ -118,22 +118,26 @@ export default function ContactPage() {
   return (
     <div className="container py-24">
       <div className="text-center mb-16">
+        <div className="h-1 w-full bg-gradient-to-r from-primary/40 via-primary to-primary/40 mb-8" />
+
         <h1 className="text-4xl font-bold mb-6">
           {contactContent.hero.title}
           <span className="block text-2xl text-muted-foreground mt-2">
             {contactContent.hero.subtitle}
           </span>
         </h1>
+
+        <div className="h-1 w-full bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <div className="space-y-8">
+        <div className="space-y-6">
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             {contactContent.hero.description}
           </p>
           {/* Contact Image */}
           <div className="max-w-xl">
-            <div className="aspect-video relative rounded-lg overflow-hidden">
+            <div className="aspect-square relative rounded-lg overflow-hidden">
               <Image 
                 src={getBasePath(contactContent.image.src)}
                 alt={contactContent.image.alt}

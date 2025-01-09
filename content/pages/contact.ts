@@ -6,7 +6,7 @@ export const contactContent = {
   },
 
   image: {
-    src: "/images/expo/expo-container-replica.jpg",
+    src: "/images/container/container-doors-open.png",
     alt: "Garden Gems Container Display"
   },
 
