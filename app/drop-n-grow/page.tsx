@@ -84,12 +84,17 @@ export default function DropNGrowPage() {
   return (
     <div className="container py-24">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">
-          Drop N Grow
-          <span className="block text-2xl text-muted-foreground mt-2">
-            All-In-One Container Solution
-          </span>
-        </h1>
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold mb-6">
+            Drop N Grow
+            <span className="block text-2xl text-muted-foreground mt-2">
+              All-In-One Container Solution
+            </span>
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            The Drop N Grow system offers a revolutionary all-in-one container solution designed to streamline your growing operations. Built with a streamlined, efficient setup into the cultivation industry, it offers a traditional grow medium. Every container provides the tools to maximize your growing potential.
+          </p>
+        </div>
 
         <div className="aspect-video relative rounded-lg overflow-hidden mb-12">
           <video
@@ -105,12 +110,8 @@ export default function DropNGrowPage() {
         </div>
 
         <div className="prose prose-lg max-w-none">
-          <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-            The Drop N Grow system offers a revolutionary all-in-one container solution designed to streamline your growing operations. Built with a streamlined, efficient setup into the cultivation industry, it offers a traditional grow medium. Every container provides the tools to maximize your growing potential.
-          </p>
-
-          <h2 className="text-2xl font-semibold mt-12 mb-6">Drop N Grow vs Traditional Facilities</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+          <h2 className="text-2xl font-semibold mb-8 text-center">Drop N Grow vs Traditional Facilities</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
             {advantages.map((advantage) => (
               <div 
                 key={advantage.category}
@@ -145,8 +146,8 @@ export default function DropNGrowPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-semibold mt-12 mb-6">Key Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <h2 className="text-2xl font-semibold mb-8 text-center">Key Features</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
             {features.map((feature) => (
               <div 
                 key={feature.title}
@@ -178,8 +179,8 @@ export default function DropNGrowPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-semibold mt-12 mb-6">Technical Specifications</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <h2 className="text-2xl font-semibold mb-8 text-center">Technical Specifications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
             {technicalSpecs.map((section) => (
               <div key={section.category}>
                 <h3 className="text-xl font-semibold text-foreground mb-4">{section.category}</h3>
@@ -197,7 +198,7 @@ export default function DropNGrowPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-semibold mt-12 mb-6">Control System - CRONOS</h2>
+          <h2 className="text-2xl font-semibold mb-8 text-center">Control System - CRONOS</h2>
           <p className="text-muted-foreground mb-6">
             Our integrated control system provides seamless control over:
           </p>
