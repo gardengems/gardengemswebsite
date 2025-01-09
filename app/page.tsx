@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { getAssetPath } from '@/lib/utils';
 
 export default function Home() {
   const [showScroll, setShowScroll] = useState(true);
@@ -23,19 +24,19 @@ export default function Home() {
     {
       name: "Lumatek",
       description: "Advanced LED lighting solutions",
-      logo: "/partners/lumatek.png",
+      logo: getAssetPath("/partners/lumatek.png"),
       url: "https://lumatek-lighting.com/"
     },
     {
       name: "Growlink",
       description: "Smart growing automation",
-      logo: "/partners/growlink.png",
+      logo: getAssetPath("/partners/growlink.png"),
       url: "https://www.growlink.ag/"
     },
     {
       name: "Control Union",
       description: "International certification",
-      logo: "/partners/controlunion.png",
+      logo: getAssetPath("/partners/controlunion.png"),
       url: "https://www.controlunion.com/"
     }
   ];
@@ -44,7 +45,7 @@ export default function Home() {
     <>
       <section className="relative h-[100vh] flex flex-col justify-center">
         <Image
-          src="/images/hero/hero-bg.png"
+          src={getAssetPath("/images/hero/hero-bg.png")}
           alt="Drop N Grow Container"
           fill
           className="object-cover"
@@ -154,7 +155,7 @@ export default function Home() {
             </div>
             <div className="relative aspect-square bg-muted/20 rounded-lg overflow-hidden">
               <Image 
-                src="/images/container/container-interior.jpg"
+                src={getAssetPath("/images/container/container-interior.jpg")}
                 alt="Drop N Grow Container Interior"
                 fill
                 className="object-cover"
@@ -243,9 +244,9 @@ export default function Home() {
         <div className="container">
           <div className="relative aspect-video max-w-4xl mx-auto rounded-lg overflow-hidden">
             <Image 
-              src="/images/expo/expo-container-replica.jpg"
+              src={getAssetPath("/images/expo/expo-container-replica.jpg")}
               alt="Drop N Grow Container Display"
-              fill
+              fill 
               className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
             />

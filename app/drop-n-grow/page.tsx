@@ -1,3 +1,5 @@
+import { getAssetPath } from '@/lib/utils';
+
 export default function DropNGrowPage() {
   const features = [
     {
@@ -104,7 +106,7 @@ export default function DropNGrowPage() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/videos/container-hero.mp4" type="video/mp4" />
+            <source src={getAssetPath('/videos/container-hero.mp4')} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

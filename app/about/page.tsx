@@ -1,5 +1,6 @@
 import { ExpoSlideshow } from '@/components/ExpoSlideshow';
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
 
 export default function AboutPage() {
   return (
@@ -16,7 +17,7 @@ export default function AboutPage() {
       <div className="max-w-4xl mx-auto mb-16">
         <div className="aspect-video relative rounded-lg overflow-hidden">
           <Image 
-            src="/images/container/container-interior.jpg"
+            src={getAssetPath("/images/container/container-interior.jpg")}
             alt="Garden Gems Container Interior"
             fill
             className="object-cover"
