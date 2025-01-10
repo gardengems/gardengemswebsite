@@ -26,69 +26,69 @@ export default function RootLayout({
           {children}
         </main>
         <footer className="border-t bg-muted/20">
-          <div className="container py-8">
-            {/* Three Column Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_2fr] gap-6">
-              {/* Left Column - About & Quick Links */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <h3 className="text-base font-semibold">{footerContent.about.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {footerContent.about.description}
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-base font-semibold">{footerContent.quickLinks.title}</h3>
-                  <ul className="space-y-1 text-sm">
-                    {footerContent.quickLinks.links.map((link) => (
-                      <li key={link.href}>
-                        <a href={getBasePath(link.href)} className="hover:text-primary transition-colors">
-                          {link.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          <div className="container py-6">
+            {/* Five Column Grid with Centered Logo */}
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto_1fr_1fr] gap-6">
+              {/* About Section */}
+              <div className="space-y-2">
+                <h3 className="text-base font-semibold">{footerContent.about.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {footerContent.about.description}
+                </p>
               </div>
 
-              {/* Middle Column - Logo */}
-              <div className="flex flex-col justify-center items-center py-2">
-                <div className="relative w-32 h-32">
+              {/* Quick Links */}
+              <div className="space-y-2">
+                <h3 className="text-base font-semibold">{footerContent.quickLinks.title}</h3>
+                <ul className="space-y-1 text-sm">
+                  {footerContent.quickLinks.links.map((link) => (
+                    <li key={link.href}>
+                      <a href={getBasePath(link.href)} className="hover:text-primary transition-colors">
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Center - Logo */}
+              <div className="flex justify-center items-center">
+                <div className="relative w-20 h-20">
                   <Image
                     src={getBasePath(footerContent.logo.src)}
                     alt={footerContent.logo.alt}
                     fill
                     className="object-contain"
-                    sizes="(max-width: 768px) 128px, 128px"
+                    sizes="(max-width: 768px) 80px, 80px"
                   />
                 </div>
               </div>
 
-              {/* Right Column - Contact & Social */}
-              <div className="grid grid-cols-2 gap-6">
-                <div className="space-y-2 min-w-0">
-                  <h3 className="text-base font-semibold">{footerContent.contact.title}</h3>
-                  <ul className="space-y-1 text-sm">
-                    <li className="break-words">{footerContent.contact.email}</li>
-                  </ul>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-base font-semibold">{footerContent.social.title}</h3>
-                  <ul className="space-y-1 text-sm">
-                    {footerContent.social.links.map((link) => (
-                      <li key={link.href}>
-                        <a href={link.href} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                          {link.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              {/* Contact */}
+              <div className="space-y-2">
+                <h3 className="text-base font-semibold">{footerContent.contact.title}</h3>
+                <ul className="space-y-1 text-sm">
+                  <li className="break-words">{footerContent.contact.email}</li>
+                </ul>
+              </div>
+
+              {/* Social */}
+              <div className="space-y-2">
+                <h3 className="text-base font-semibold">{footerContent.social.title}</h3>
+                <ul className="space-y-1 text-sm">
+                  {footerContent.social.links.map((link) => (
+                    <li key={link.href}>
+                      <a href={link.href} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
             {/* Copyright */}
-            <div className="text-center text-sm text-muted-foreground mt-6">
+            <div className="text-center text-sm text-muted-foreground mt-4">
               © {new Date().getFullYear()} {footerContent.copyright.text}
             </div>
           </div>
