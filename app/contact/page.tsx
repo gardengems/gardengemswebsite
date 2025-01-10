@@ -117,7 +117,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="min-h-[50vh] flex items-center pt-12">
+      <section className="h-[calc(100vh-4rem)] flex items-center pt-12">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">

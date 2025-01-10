@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function DropNGrowPage() {
   return (
     <>
-      <section className="min-h-[50vh] flex items-center pt-12 pb-8">
+      <section className="h-[calc(100vh-4rem)] flex items-center pt-12">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
