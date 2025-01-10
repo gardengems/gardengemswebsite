@@ -6,10 +6,10 @@ import Image from 'next/image';
 export default function DropNGrowPage() {
   return (
     <>
-      <section className="min-h-[100vh] flex items-center pt-16 pb-8">
+      <section className="h-[calc(100vh-4rem)] flex items-center pt-12">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <div className="h-1 w-full bg-gradient-to-r from-primary/40 via-primary to-primary/40 mb-8" />
 
               <h1 className="text-4xl font-bold mb-6">
@@ -55,8 +55,8 @@ export default function DropNGrowPage() {
         </div>
       </section>
 
-      <div className="container py-24">
-        <div className="prose prose-lg max-w-none">
+      <div className="container py-16">
+        <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Background Logo */}
             <div className="absolute inset-0 hidden md:flex items-center justify-center pointer-events-none">
