@@ -15,12 +15,12 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border transition-colors duration-200">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link 
               href="/" 
-              className="relative w-48 h-14 flex-shrink-0"
+              className="relative w-48 h-14 flex-shrink-0 transition-opacity duration-200 hover:opacity-90"
               {...(isActive('/') ? { onClick: (e) => e.preventDefault() } : {})}
             >
               <Image
@@ -39,7 +39,7 @@ export default function Navigation() {
                 isActive(link.href) ? (
                   <span
                     key={link.href}
-                    className="px-4 py-2 rounded-md bg-primary/10 text-primary font-medium cursor-default"
+                    className="px-4 py-2 rounded-md bg-primary/10 text-primary font-medium cursor-default transition-all duration-200"
                   >
                     {link.label}
                   </span>
@@ -47,7 +47,7 @@ export default function Navigation() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="px-4 py-2 rounded-md bg-accent/5 hover:bg-accent/10 text-muted-foreground hover:text-foreground transition-colors"
+                    className="px-4 py-2 rounded-md bg-accent/5 hover:bg-accent/10 text-muted-foreground hover:text-foreground transition-all duration-200"
                   >
                     {link.label}
                   </Link>
@@ -58,7 +58,7 @@ export default function Navigation() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-md hover:bg-accent"
+              className="md:hidden p-2 rounded-md hover:bg-accent transition-colors duration-200"
               aria-label={navigationContent.mobileMenu.ariaLabels.toggleMenu}
             >
               <svg
@@ -86,12 +86,12 @@ export default function Navigation() {
         <>
           {/* Backdrop */}
           <div 
-            className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40 md:hidden"
+            className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300"
             onClick={() => setIsOpen(false)}
           />
           
           {/* Menu Panel */}
-          <div className="fixed inset-y-0 right-0 w-full max-w-xs bg-background shadow-xl z-50 md:hidden">
+          <div className="fixed inset-y-0 right-0 w-full max-w-xs bg-background shadow-xl z-50 md:hidden transition-transform duration-300 transform">
             <div className="flex flex-col h-full">
               <div className="flex items-center justify-between h-16 px-6 border-b border-border">
                 <span className="text-lg font-semibold">{navigationContent.mobileMenu.title}</span>
