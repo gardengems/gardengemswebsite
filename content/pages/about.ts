@@ -1,8 +1,8 @@
 export const aboutContent = {
   hero: {
     title: "About Garden Gems",
-    subtitle: "Pioneering Container Growing Technology",
-    description: "We're redefining container growing with the revolutionary innovation of our Drop N Grow solution."
+    subtitle: "Pioneering Cannabis Growing Technology",
+    description: "We're redefining cannabis cultivation with the revolutionary innovation of our Drop N Grow container solution."
   },
 
   heroImage: {
@@ -12,7 +12,7 @@ export const aboutContent = {
 
   mission: {
     title: "Our Mission",
-    description: "At Garden Gems, we're redefining the future of cannabis cultivation with cutting-edge, sustainable container solutions.  Our innovative Drop N Grow modular systems integrate smart technology with scalable designs, making it easier for businesses to cultivate premium, medical-grade cannabis while minimizing both costs and environmental impact.  We empower our customers to streamline operations, achieve peak efficiency, and maintain compliance with the highest international standards-all while driving sustainable growth.  With Garden Gems, you're not just investing in a product; you're gaining a partner committed to your long-term success in a fast-evolving global market."
+    description: "At Garden Gems, our mission is to empower cannabis businesses with efficient, scalable cultivation solutions. Through our Drop N Grow modular systems, we provide smart, integrated technology that streamlines operations, enhances productivity, and ensures compliance with the highest international standards. We are committed to supporting our partners in achieving consistent, high-quality yields while driving growth in a competitive market."
   },
 
   values: {
@@ -20,17 +20,17 @@ export const aboutContent = {
     items: [
       {
         title: "Innovation Excellence",
-        description: "Continuously pushing boundaries to create solutions that define the future of growing technology.",
+        description: "Continuously pushing boundaries to create solutions that define the future of commercial growing technology.",
         icon: "checkmark"
       },
       {
-        title: "Sustainability",
-        description: "Committed to environmentally responsible practices in our products and operations.",
+        title: "Equipment and Costs",
+        description: "Committed to providing the best equipment the cannabis market has to offer while never overcharging.",
         icon: "globe"
       },
       {
         title: "Customer Success",
-        description: "Dedicated to building lasting partnerships and ensuring our customers' growth and success.",
+        description: "We are dedicated to our customers' success, providing the tools, support, and expertise they need to achieve consistent growth and exceptional results.",
         icon: "users"
       }
     ]
