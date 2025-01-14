@@ -1,8 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
-import { getBasePath } from '@/lib/utils';
 import { contactContent } from '@/content/pages/contact';
 import { Icon } from '@/components/icons';
 
@@ -117,7 +115,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="pt-12">
+      <section className="pt-24">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
