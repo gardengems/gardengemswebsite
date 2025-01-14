@@ -13,7 +13,7 @@ export const homeContent = {
   solution: {
     title: "All-In-One Solution",
     subtitle: "Smart Container Technology",
-    description: "Garden Gems Drop N Grow containers are designed for easy scaling and modular setup. Each container is a self-contained grow unit with automated controls, allowing stacking and flexible configurations within warehouses or outdoor spaces. This modular design enables seamless expansion—from a single container to multi-level arrays—maximizing space and adapting to demand. The setup optimizes footprint efficiency and supports smooth scaling, giving investors a flexible and high-return production model.",
+    description: "Garden Gems Drop N Grow containers are designed for easy scaling and modular installation. Each container is a self-contained grow unit with automated controls, allowing stacking and flexible configurations within warehouses or outdoor spaces. This modular design enables seamless expansion—from a single container to multi-level arrays—maximizing space and adapting to demand. The setup optimizes footprint efficiency and supports smooth scaling, giving investors a flexible and high-return production model.",
     features: [
       "Advanced automated irrigation systems",
       "Integrated drying mode",
