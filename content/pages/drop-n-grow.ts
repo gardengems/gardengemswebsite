@@ -2,7 +2,7 @@ export const dropNGrowContent = {
   hero: {
     title: "Drop N Grow",
     subtitle: "All-In-One Grow Container Solution",
-    description: "The Drop N Grow system redefines cultivation with an all-in-one container solution designed to maximize efficiency and results. Fully equipped with everything you need, it combines cutting-edge automation to enhance your operations. With unmatched scalability, Drop N Grow offers a reliable, high-performance platform for growers and investors looking to scale production and achieve exceptional returns with minimal installation.",
+    description: "The Drop N Grow system redefines cultivation with an all-in-one container solution designed to maximize efficiency and results. Equipped with everything your growers need, it combines cutting-edge automation to enhance your operations. With unmatched scalability, Drop N Grow offers a reliable, high-performance platform for growers and investors looking to scale production and achieve exceptional returns.",
     placeholder: {
       src: "/images/video-placeholder.jpg",
       alt: "Drop N Grow System Video Preview"
@@ -95,9 +95,9 @@ export const dropNGrowContent = {
       {
         category: "System Requirements",
         items: [
-          { label: "Power Supply", value: "3 Phase HookupV" },
+          { label: "Power Supply", value: "3 Phase Hookup" },
           { label: "Peak Consumption", value: "25kw" },
-          { label: "Irrigation", value: "Growlink or Manuald" },
+          { label: "Irrigation", value: "Growlink or Manual" },
           { label: "Control Interface", value: "Web App or Manual" }
         ]
       }
