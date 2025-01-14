@@ -1,8 +1,8 @@
 export const homeContent = {
   hero: {
     title: "Drop N Grow",
-    subtitle: "The Future of Container Growing",
-    description: "Revolutionary all-in-one container solution for professional growing operations",
+    subtitle: "The Future of Medicinal Cannabis Cultivation",
+    description: "Revolutionary all-in-one grow container solution for commercial growing operations",
     ctaButton: {
       text: "Discover Drop N Grow",
       href: "/drop-n-grow"
@@ -13,10 +13,10 @@ export const homeContent = {
   solution: {
     title: "All-In-One Solution",
     subtitle: "Smart Container Technology",
-    description: "Advanced container technology designed for optimal plant growth and efficiency. Our innovative solution combines durability with smart design features for professional growing operations.",
+    description: "Garden Gems Drop N Grow containers are designed for easy scaling and modular setup. Each container is a self-contained grow unit with automated controls, allowing stacking and flexible configurations within warehouses or outdoor spaces. This modular design enables seamless expansion—from a single container to multi-level arrays—maximizing space and adapting to demand. The setup optimizes footprint efficiency and supports smooth scaling, giving investors a flexible and high-return production model.",
     features: [
-      "Advanced irrigation system",
-      "Efficient nutrient delivery",
+      "Advanced automated irrigation systems",
+      "Integrated drying mode",
       "Smart monitoring capabilities"
     ],
     ctaButton: {
@@ -34,17 +34,17 @@ export const homeContent = {
     items: [
       {
         title: "Smart Technology",
-        description: "Integrated monitoring and control systems for optimal growing conditions",
+        description: "Integrated monitoring and control systems for perfecting growing conditions",
         icon: "checkmark"
       },
       {
         title: "Efficient Design",
-        description: "Optimized for commercial growing with space-saving features",
+        description: "Optimized for commercial growing with minimal support hours",
         icon: "clock"
       },
       {
-        title: "Expert Support",
-        description: "Comprehensive training and ongoing technical assistance",
+        title: "Compliance",
+        description: "Built-in EU-GACP compliance and provided SOPs",
         icon: "lightning"
       }
     ]
@@ -58,7 +58,7 @@ export const homeContent = {
   },
 
   partners: {
-    title: "Our Partners & Certifications",
+    title: "Our Partners",
     subtitle: "We partner with industry trailblazers to deliver unmatched quality and set new standards.",
     list: [
       {
@@ -83,7 +83,7 @@ export const homeContent = {
     footer: {
       text: "Through strategic partnerships with industry leaders like Lumatek, Growlink, Control Union, we combine innovation, automation, and world-class certifications to deliver the ultimate cultivation solution.",
       ctaButton: {
-        text: "Learn more about our quality standards",
+        text: "Learn more",
         href: "/about"
       }
     }
