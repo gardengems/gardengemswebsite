@@ -33,11 +33,11 @@ export const footerContent = {
     links: [
       {
         label: "LinkedIn",
-        href: "https://linkedin.com/company/garden-gems-international"
+        href: "https://www.linkedin.com/company/garden-gems-thailand/"
       },
       {
         label: "Instagram",
-        href: "https://instagram.com/gardengemsinternational"
+        href: "https://instagram.com/garden-gems-international"
       }
     ]
   },
