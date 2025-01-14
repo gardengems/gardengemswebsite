@@ -37,7 +37,7 @@ export const footerContent = {
       },
       {
         label: "Instagram",
-        href: "https://instagram.com/garden-gems-international"
+        href: "https://instagram.com/garden.gems.international"
       }
     ]
   },
