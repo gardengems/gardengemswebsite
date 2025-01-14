@@ -7,10 +7,10 @@ import { Icon } from '@/components/icons';
 export default function AboutPage() {
   return (
     <>
-      <section className="h-[calc(100vh-4rem)] flex items-center pt-12">
+      <section className="h-[calc(100vh-4rem)] flex items-start pt-24">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
+            <div className="text-center mb-12">
               <div className="h-1 w-full bg-gradient-to-r from-primary/40 via-primary to-primary/40 mb-8" />
               <h1 className="text-4xl font-bold mb-6">
                 {aboutContent.hero.title}
