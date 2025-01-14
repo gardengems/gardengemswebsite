@@ -1,8 +1,8 @@
 export const dropNGrowContent = {
   hero: {
     title: "Drop N Grow",
-    subtitle: "All-In-One Container Solution",
-    description: "The Drop N Grow system delivers a game-changing all-in-one container solution, seamlessly designed to optimize your growing operations.  Each container is equipped with everything you need to elevate your cultivation potential, offering unmatched efficiency and a traditional grow medium to drive exceptional results.",
+    subtitle: "All-In-One Grow Container Solution",
+    description: "The Drop N Grow system redefines cultivation with an all-in-one container solution designed to maximize efficiency and results. Fully equipped with everything you need, it combines cutting-edge automation to enhance your operations. With unmatched scalability, Drop N Grow offers a reliable, high-performance platform for growers and investors looking to scale production and achieve exceptional returns with minimal installation.",
     placeholder: {
       src: "/images/video-placeholder.jpg",
       alt: "Drop N Grow System Video Preview"
@@ -24,17 +24,17 @@ export const dropNGrowContent = {
       {
         category: "Cost",
         dropNGrow: "Set costs that are often cheaper than whole building facilities for similar amount of lights",
-        traditional: "Hidden fees and dishonest middlemen overcharging"
+        traditional: "Hidden fees and dishonest middlemen overcharging for low quality equipment"
       },
       {
         category: "Revenue per Labor Hour",
-        dropNGrow: "Higher due to automation and reduced labor needs",
-        traditional: "Lower; manual processes require more labor and management"
+        dropNGrow: "Higher returns due to automation and reduced labor needs",
+        traditional: "Lower returns; manual processes require more labor and management"
       },
       {
         category: "Setup Time",
-        dropNGrow: "Rapid installation; simple hookups (water, electric, internet)",
-        traditional: "Lengthy construction time; complex infrastructure needed"
+        dropNGrow: "Rapid installation; simple hookups (water, electricity, internet)",
+        traditional: "Lengthy construction time; complex design and infrastructure needed"
       },
       {
         category: "Architectural Involvement",
@@ -75,7 +75,7 @@ export const dropNGrowContent = {
       {
         title: "Professional Design",
         description: "Engineered for commercial growing operations with durability and efficiency in mind.",
-        specs: ["UV resistant materials", "Stackable design", "Easy maintenance"]
+        specs: ["high quality equipment", "Stackable design", "Easy maintenance"]
       }
     ]
   },
@@ -86,27 +86,27 @@ export const dropNGrowContent = {
       {
         category: "Physical Specifications",
         items: [
-          { label: "Height", value: "24 inches" },
-          { label: "Width", value: "18 inches" },
-          { label: "Depth", value: "18 inches" },
-          { label: "Capacity", value: "5 gallons" }
+          { label: "Height", value: "3 Meters" },
+          { label: "Width", value: "2.44 Meters" },
+          { label: "Length", value: "12.2 Meters" },
+          { label: "Capacity", value: "320 Plants" }
         ]
       },
       {
         category: "System Requirements",
         items: [
-          { label: "Power Supply", value: "110V/220V" },
-          { label: "Water Connection", value: "Standard 3/4\"" },
-          { label: "Network", value: "WiFi enabled" },
-          { label: "Control Interface", value: "Touch screen" }
+          { label: "Power Supply", value: "3 Phase HookupV" },
+          { label: "Peak Consumption", value: "25kw" },
+          { label: "Irrigation", value: "Growlink or Manuald" },
+          { label: "Control Interface", value: "Web App or Manual" }
         ]
       }
     ]
   },
 
   controlSystem: {
-    title: "Control System - CRONOS",
-    description: "Our integrated control system provides seamless control over:",
+    title: "Automation - Growlink",
+    description: "Integrated custom growlink interface with auto dosing fertigation rack",
     features: [
       "Nutrient dosing and monitoring",
       "Environmental controls",
