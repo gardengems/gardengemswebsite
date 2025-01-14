@@ -14,7 +14,7 @@ export const dropNGrowContent = {
   },
 
   comparison: {
-    title: "Drop N Grow vs Traditional Facilitiess",
+    title: "Drop N Grow vs Traditional Facilities",
     items: [
       {
         category: "Design Time",
