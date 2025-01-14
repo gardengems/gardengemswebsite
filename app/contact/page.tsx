@@ -117,7 +117,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="h-[calc(100vh-4rem)] flex items-start pt-24">
+      <section className="pt-12">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -136,28 +136,11 @@ export default function ContactPage() {
                 {contactContent.hero.description}
               </p>
             </div>
-
-            {/* Hero Image */}
-            <div className="relative rounded-lg overflow-hidden max-w-xl mx-auto">
-              <div className="aspect-square">
-                <Image 
-                  src={getBasePath(contactContent.image.src)}
-                  alt={contactContent.image.alt}
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                  priority
-                  quality={90}
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVigAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVigAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkLzYvLy0vLi44QjhAOEA4Qi4tMkYyLlFUUVRAR0BXUFNMUE1HUVf/2wBDARUXFyAeIR4eIVFCLi4uUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVH/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <div className="container pt-16 pb-24">
+      <div className="container pb-24">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div className="space-y-6">
