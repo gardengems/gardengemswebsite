@@ -65,7 +65,7 @@ export const dropNGrowContent = {
       {
         title: "Advanced Irrigation",
         description: "Built-in irrigation system for optimal water distribution and nutrient delivery.",
-        specs: ["Automated watering", "Precision drip system", "Water-efficient design"]
+        specs: ["Automated watering", "Precision drip system", "Automatic fertigation"]
       },
       {
         title: "Smart Monitoring",
@@ -75,7 +75,7 @@ export const dropNGrowContent = {
       {
         title: "Professional Design",
         description: "Engineered for commercial growing operations with durability and efficiency in mind.",
-        specs: ["high quality equipment", "Stackable design", "Easy maintenance"]
+        specs: ["High quality equipment", "Stackable design", "Easy maintenance"]
       }
     ]
   },
