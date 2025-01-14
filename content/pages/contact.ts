@@ -20,14 +20,14 @@ export const contactContent = {
       },
       {
         title: "Instagram",
-        value: "@gardengemsinternational",
-        url: "https://instagram.com/gardengemsinternational",
+        value: "@garden.gems.international",
+        url: "https://instagram.com/garden.gems.international",
         icon: "instagram"
       },
       {
         title: "LinkedIn",
         value: "Garden Gems International",
-        url: "https://linkedin.com/company/garden-gems-international",
+        url: "https://www.linkedin.com/company/garden-gems-thailand/",
         icon: "linkedin"
       }
     ]
