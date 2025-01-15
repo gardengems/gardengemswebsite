@@ -6,6 +6,6 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getBasePath(path: string): string {
-  const basePath = process.env.NODE_ENV === 'production' ? '/gardengemswebsite' : '';
+  const basePath = process.env.NODE_ENV === 'production' ? '' : '';
   return `${basePath}${path}`;
 }
