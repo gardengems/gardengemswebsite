@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function DropNGrowPage() {
   return (
     <>
-      <section className="h-[calc(100vh-4rem)] flex items-start pt-24">
+      <section className="pt-24">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -26,7 +26,7 @@ export default function DropNGrowPage() {
               </p>
             </div>
 
-            <div className="aspect-video relative rounded-lg overflow-hidden mb-8">
+            <div className="aspect-video relative rounded-lg overflow-hidden mb-16 md:mb-24">
               {/* Video Placeholder */}
               <div className="absolute inset-0 z-0">
                 <Image
@@ -55,18 +55,18 @@ export default function DropNGrowPage() {
         </div>
       </section>
 
-      <div className="container py-16">
+      <div className="container py-8 md:py-16">
         <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Background Logo */}
+          {/* Background Logo */}
+          <div className="relative mb-16 md:mb-24">
             <div className="absolute inset-0 hidden md:flex items-center justify-center pointer-events-none">
-              <div className="w-full max-w-[600px] -mt-24 -ml-6">
+              <div className="w-full max-w-[800px] opacity-10 mt-26 -ml-[2rem]">
                 <div className="relative aspect-square">
                   <Image
                     src={getBasePath("/images/green-gem-logo.png")}
                     alt=""
                     fill
-                    className="object-contain opacity-10"
+                    className="object-contain"
                     quality={75}
                     placeholder="blur"
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVigAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVigAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkLzYvLy0vLi44QjhAOEA4Qi4tMkYyLlFUUVRAR0BXUFNMUE1HUVf/2wBDARUXFyAeIR4eIVFCLi4uUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVH/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
@@ -76,9 +76,9 @@ export default function DropNGrowPage() {
             </div>
 
             {/* Content */}
-            <div className="relative">
+            <div className="relative z-10">
               <h2 className="text-2xl font-semibold mb-8 text-center">{dropNGrowContent.comparison.title}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {dropNGrowContent.comparison.items.map((item) => (
                   <div 
                     key={item.category}

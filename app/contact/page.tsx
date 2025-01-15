@@ -140,8 +140,8 @@ export default function ContactPage() {
 
       <div className="container pb-24">
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div className="space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+            <div className="space-y-6 order-2 lg:order-1">
               <div className="space-y-4">
                 <h2 className="text-2xl font-semibold">{contactContent.contactInfo.title}</h2>
                 <div className="space-y-4">
@@ -166,7 +166,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-8 order-1 lg:order-2">
               {showForm ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {formStatus.type === 'error' && (
