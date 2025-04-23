@@ -7,7 +7,8 @@ export const navigationContent = {
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About Us' },
     { href: '/drop-n-grow', label: 'Drop N Grow' },
-    { href: '/contact', label: 'Contact' }
+    { href: '/contact', label: 'Contact' },
+    { href: 'https://knowledgebase.dropngrowsystems.com/', label: 'Knowledge Base' }
   ],
   mobileMenu: {
     title: "Menu",

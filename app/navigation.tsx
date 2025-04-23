@@ -12,6 +12,7 @@ export default function Navigation() {
   const pathname = usePathname();
 
   const isActive = (href: string) => pathname === href;
+  const isExternalLink = (href: string) => href.startsWith('http');
 
   return (
     <>
@@ -43,6 +44,16 @@ export default function Navigation() {
                   >
                     {link.label}
                   </span>
+                ) : isExternalLink(link.href) ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-md bg-accent/5 hover:bg-accent/10 text-muted-foreground hover:text-foreground transition-all duration-200"
+                  >
+                    {link.label}
+                  </a>
                 ) : (
                   <Link
                     key={link.href}
@@ -124,6 +135,17 @@ export default function Navigation() {
                     >
                       {link.label}
                     </span>
+                  ) : isExternalLink(link.href) ? (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className="block px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground bg-accent/5 hover:bg-accent/10 rounded-md transition-colors"
+                    >
+                      {link.label}
+                    </a>
                   ) : (
                     <Link
                       key={link.href}
