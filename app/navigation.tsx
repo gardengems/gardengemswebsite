@@ -19,20 +19,20 @@ export default function Navigation() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border transition-colors duration-200">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <Link 
-              href="/" 
-              className="relative w-48 h-14 flex-shrink-0 transition-opacity duration-200 hover:opacity-90"
-              {...(isActive('/') ? { onClick: (e) => e.preventDefault() } : {})}
-            >
-              <Image
-                src={getBasePath(navigationContent.logo.src)}
-                alt={navigationContent.logo.alt}
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 192px, 192px"
-                priority
-              />
-            </Link>
+              <Link 
+                href="/" 
+                className="relative w-48 h-14 flex-shrink-0 transition-opacity duration-200 hover:opacity-90"
+                {...(isActive('/') ? { onClick: (e) => e.preventDefault() } : {})}
+              >
+                <Image
+                  src={getBasePath(navigationContent.logo.src)}
+                  alt={navigationContent.logo.alt}
+                  fill
+                  className="object-contain p-2"
+                  sizes="(max-width: 768px) 192px, 192px"
+                  priority
+                />
+              </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-4">
