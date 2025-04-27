@@ -10,6 +10,10 @@ export const aboutContent = {
       src: "/images/about-us/gallery/Top View.png",
       alt: "Inside Garden Gems Container"
     }
+       {
+      src: "/images/about-us/gallery/Top View.png",
+      alt: "Inside Garden Gems Container"
+    } 
   ],
 
   mission: {
