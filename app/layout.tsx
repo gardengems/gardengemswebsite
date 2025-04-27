@@ -20,6 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?" />
+      </head>
       <body className={inter.className}>
         <Navigation />
         <main className="min-h-screen pt-16">
