@@ -26,7 +26,7 @@ export default function AboutPage() {
 
             {/* Hero Slideshow */}
             <div className="w-full mb-16">
-              <HeroSlideshow />
+              <HeroSlideshow images={aboutContent.heroImages} />
             </div>
           </div>
         </div>

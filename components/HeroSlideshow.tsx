@@ -2,9 +2,17 @@
 
 import { useState, useEffect, TouchEvent } from 'react';
 import Image from 'next/image';
-import { heroImages } from '@/lib/images';
 
-export function HeroSlideshow() {
+interface ImageInfo {
+  src: string;
+  alt: string;
+}
+
+interface HeroSlideshowProps {
+  images: ImageInfo[];
+}
+
+export function HeroSlideshow({ images }: HeroSlideshowProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
@@ -12,18 +20,18 @@ export function HeroSlideshow() {
   // Auto-advance slides every 8 seconds
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((current) => (current + 1) % heroImages.length);
+      setCurrentIndex((current) => (current + 1) % images.length);
     }, 8000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [images.length]);
 
   const goToNext = () => {
-    setCurrentIndex((current) => (current + 1) % heroImages.length);
+    setCurrentIndex((current) => (current + 1) % images.length);
   };
 
   const goToPrevious = () => {
-    setCurrentIndex((current) => (current - 1 + heroImages.length) % heroImages.length);
+    setCurrentIndex((current) => (current - 1 + images.length) % images.length);
   };
 
   const handleTouchStart = (e: TouchEvent) => {
@@ -56,7 +64,7 @@ export function HeroSlideshow() {
   };
 
   // If no images are found, return null
-  if (heroImages.length === 0) {
+  if (images.length === 0) {
     return null;
   }
 
@@ -69,8 +77,8 @@ export function HeroSlideshow() {
     >
       <div className="aspect-video">
         <Image 
-          src={heroImages[currentIndex].src}
-          alt={heroImages[currentIndex].alt}
+          src={images[currentIndex].src}
+          alt={images[currentIndex].alt}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
@@ -82,7 +90,7 @@ export function HeroSlideshow() {
       </div>
 
       {/* Navigation Buttons - Only show if there's more than one image */}
-      {heroImages.length > 1 && (
+      {images.length > 1 && (
         <>
           <button
             onClick={goToPrevious}
@@ -125,7 +133,7 @@ export function HeroSlideshow() {
 
           {/* Slide Indicators */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-            {heroImages.map((_, index) => (
+            {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}

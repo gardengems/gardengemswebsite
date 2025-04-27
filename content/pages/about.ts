@@ -5,10 +5,12 @@ export const aboutContent = {
     description: "We're redefining cannabis cultivation with the revolutionary innovation of our Drop N Grow container solution."
   },
 
-  heroImage: {
-    src: "/images/container/container-in-warehouse.jpg",
-    alt: "Garden Gems Container Interior"
-  },
+  heroImages: [
+    {
+      src: "/images/container/container-in-warehouse.jpg",
+      alt: "Garden Gems Container"
+    }
+  ],
 
   mission: {
     title: "Our Mission",
