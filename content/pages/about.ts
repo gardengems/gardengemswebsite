@@ -7,8 +7,8 @@ export const aboutContent = {
 
   heroImages: [
     {
-      src: "/images/container/container-in-warehouse.jpg",
-      alt: "Garden Gems Container"
+      src: "/images/container/Top View.png",
+      alt: "Inside Garden Gems Container"
     }
   ],
 
