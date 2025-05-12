@@ -10,9 +10,10 @@ interface ImageInfo {
 
 interface HeroSlideshowProps {
   images: ImageInfo[];
+  aspectRatio?: string;
 }
 
-export function HeroSlideshow({ images }: HeroSlideshowProps) {
+export function HeroSlideshow({ images, aspectRatio = "aspect-video" }: HeroSlideshowProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
@@ -75,7 +76,7 @@ export function HeroSlideshow({ images }: HeroSlideshowProps) {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="aspect-video">
+      <div className={aspectRatio}>
         <Image 
           src={images[currentIndex].src}
           alt={images[currentIndex].alt}

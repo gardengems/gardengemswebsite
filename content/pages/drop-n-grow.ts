@@ -12,7 +12,12 @@ export const dropNGrowContent = {
       type: "video/mp4"
     }
   },
-
+  heroImages: [
+    {
+      src: "/images/flower_room-01-114259-114321_1_1.gif",
+      alt: "Inside Garden Gems Container"
+    }
+  ],
   comparison: {
     title: "Drop N Grow vs Traditional Facilities",
     items: [
