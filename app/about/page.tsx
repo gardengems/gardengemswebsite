@@ -1,4 +1,3 @@
-import { ExpoSlideshow } from '@/components/ExpoSlideshow';
 import { HeroSlideshow } from '@/components/HeroSlideshow';
 import { getBasePath } from '@/lib/utils';
 import { aboutContent } from '@/content/pages/about';
@@ -77,10 +76,7 @@ export default function AboutPage() {
               <h2 className="text-2xl font-semibold text-center mb-8">{aboutContent.team.title}</h2>
               <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
             </div>
-            <ExpoSlideshow images={aboutContent.expoImages.map(image => ({
-              ...image,
-              src: getBasePath(image.src)
-            }))} />
+            <HeroSlideshow images={aboutContent.expoImages} aspectRatio="aspect-[4/3]" />
           </div>
 
           {/* Call to Action */}
