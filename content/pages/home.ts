@@ -24,8 +24,8 @@ export const homeContent = {
       href: "/drop-n-grow"
     },
     image: {
-      src: "/images/container/container-interior.jpg",
-      alt: "Drop N Grow Container Interior"
+      src: "/images/about-us/gallery/20250403_030130.jpg",
+      alt: "Drop N Grow Container Distribution Box"
     }
   },
 
