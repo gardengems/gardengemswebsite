@@ -30,6 +30,10 @@ export const dropNGrowContent = {
       alt: "Security Camera View of Flower Room"
     },
     {
+      src: "/images/about-us/gallery/20250403_030130.jpg",
+      alt: "Distribution Box"
+    },
+    {
       src: "/images/about-us/gallery/20250406_184131.jpg",
       alt: "Plant Pots Lined Up"
     } 
