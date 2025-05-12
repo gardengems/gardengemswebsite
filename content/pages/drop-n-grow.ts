@@ -16,7 +16,11 @@ export const dropNGrowContent = {
     {
       src: "/images/flower_room-01-114259-114321_1_1.gif",
       alt: "Inside Garden Gems Container"
-    }
+    },
+    {
+      src: "/images/about-us/gallery/top-view.png",
+      alt: "Inside Garden Gems Container"
+    } 
   ],
   comparison: {
     title: "Drop N Grow vs Traditional Facilities",
