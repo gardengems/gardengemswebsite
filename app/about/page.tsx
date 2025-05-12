@@ -77,7 +77,10 @@ export default function AboutPage() {
               <h2 className="text-2xl font-semibold text-center mb-8">{aboutContent.team.title}</h2>
               <div className="h-1 w-96 bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
             </div>
-            <ExpoSlideshow />
+            <ExpoSlideshow images={aboutContent.expoImages.map(image => ({
+              ...image,
+              src: getBasePath(image.src)
+            }))} />
           </div>
 
           {/* Call to Action */}

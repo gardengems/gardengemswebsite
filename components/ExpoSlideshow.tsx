@@ -2,28 +2,18 @@
 
 import { useState, useEffect, TouchEvent } from 'react';
 import Image from 'next/image';
-import { getBasePath } from '@/lib/utils';
 
-const images = [
-  {
-    src: getBasePath("/images/expo/expo-staff.jpg"),
-    alt: "Garden Gems Staff at Expo"
-  },
-  {
-    src: getBasePath("/images/expo/expo-employee.jpg"),
-    alt: "Garden Gems Employee Presentation"
-  },
-  {
-    src: getBasePath("/images/expo/expo-container-replica.jpg"),
-    alt: "Container Replica Display"
-  },
-  {
-    src: getBasePath("/images/expo/expo-consult.jpg"),
-    alt: "Consultation at Expo"
-  }
-];
+interface ImageInfo {
+  src: string;
+  alt: string;
+}
 
-export function ExpoSlideshow() {
+interface ExpoSlideshowProps {
+  images: ImageInfo[];
+  aspectRatio?: string;
+}
+
+export function ExpoSlideshow({ images, aspectRatio = "aspect-[3/4]" }: ExpoSlideshowProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
@@ -35,7 +25,7 @@ export function ExpoSlideshow() {
     }, 8000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [images.length]);
 
   const goToNext = () => {
     setCurrentIndex((current) => (current + 1) % images.length);
@@ -74,9 +64,14 @@ export function ExpoSlideshow() {
     setTouchEnd(0);
   };
 
+  // If no images are found, return null
+  if (images.length === 0) {
+    return null;
+  }
+
   return (
     <div 
-      className="relative w-full max-w-xl mx-auto aspect-[3/4] bg-muted/20 rounded-lg overflow-hidden"
+      className={`relative w-full max-w-xl mx-auto ${aspectRatio} bg-muted/20 rounded-lg overflow-hidden`}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}

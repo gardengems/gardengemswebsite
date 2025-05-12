@@ -16,6 +16,37 @@ export const aboutContent = {
     } 
   ],
 
+  expoImages: [
+    {
+      src: "/images/expo/expo-staff.jpg",
+      alt: "Garden Gems Staff at Expo"
+    },
+    {
+      src: "/images/expo/expo-employee.jpg",
+      alt: "Garden Gems Employee Presentation"
+    },
+    {
+      src: "/images/expo/expo-container-replica.jpg",
+      alt: "Container Replica Display"
+    },
+    {
+      src: "/images/expo/expo-consult.jpg",
+      alt: "Consultation at Expo"
+    },
+    {
+      src: "/images/expo/11123.jpg",
+      alt: "Expo Display"
+    },
+    {
+      src: "/images/expo/112.jpg",
+      alt: "Garden Gems Expo Booth"
+    },
+    {
+      src: "/images/expo/3311.jpg",
+      alt: "Expo Presentation"
+    }
+  ],
+
   mission: {
     title: "Our Mission",
     description: "At Garden Gems, our mission is to empower cannabis businesses with efficient, scalable cultivation solutions. Through our Drop N Grow modular systems, we provide smart, integrated technology that streamlines operations, enhances productivity, and ensures compliance with the highest international standards. We are committed to supporting our partners in achieving consistent, high-quality yields while driving growth in a competitive market."
