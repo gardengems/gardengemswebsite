@@ -7,7 +7,7 @@ export const homeContent = {
       text: "Discover Drop N Grow",
       href: "/drop-n-grow"
     },
-    backgroundImage: "/images/hero/hero-bg.png"
+    backgroundImage: "/images/hero/truck.png"
   },
 
   solution: {
