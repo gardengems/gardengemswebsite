@@ -14,12 +14,24 @@ export const dropNGrowContent = {
   },
   heroImages: [
     {
-      src: "/images/flower_room-01-114259-114321_1_1.gif",
-      alt: "Inside Garden Gems Container"
+      src: "/images/about-us/gallery/top-view.png",
+      alt: "View inside the Grow Room"
     },
     {
-      src: "/images/about-us/gallery/top-view.png",
-      alt: "Inside Garden Gems Container"
+      src: "/images/about-us/gallery/20250403_141830.jpg",
+      alt: "View into the Flowering Chamber"
+    },
+    {
+      src: "/images/about-us/gallery/20250403_031439.jpg",
+      alt: "Clean Room w/ Automatic Fertigation Rack"
+    },
+    {
+      src: "/images/flower_room-01-114259-114321_1_1.gif",
+      alt: "Security Camera View of Flower Room"
+    },
+    {
+      src: "/images/about-us/gallery/20250406_184131.jpg",
+      alt: "Plant Pots Lined Up"
     } 
   ],
   comparison: {
